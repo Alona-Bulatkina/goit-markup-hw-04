@@ -372,6 +372,8 @@ img {
   padding-bottom: 60px;
   max-width: 1600px;
   display: flex;
+  align-items: center;
+  justify-items: center;
 }
 .containerLogo {
   display: inline-flexbox;
