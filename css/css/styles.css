@@ -70,9 +70,17 @@ header {
   background: #f5f4fa;
   border-radius: 4px;
 }
-
+.mainButton:hover,
+.mainButton:focus {
+  color: #ffffff;
+}
+/*.mainButton {
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}*/
 .mainButton {
-  border:transparent;
+  border: transparent;
   cursor: pointer;
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -111,7 +119,9 @@ header {
 .icons-contakts:hover {
   fill: #2196f3;
 }
-
+.contaktsLinks {
+  color: #2196f3;
+}
 .mainList {
   display: flex;
   align-items: center;
@@ -127,12 +137,36 @@ header {
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
+  overflow: hidden;
 }
 .card-set > .item {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
   border: 1px solid #eeeeee;
+}
+.item {
+  position: relative;
+}
+.item::before {
+  display: inline-block;
+  position: absolute;
+  content: "Технокряк - это современная площадка распространения коронавируса. Компании исподльзуют эту платформу для цифрового шпионажа и атак на защищенные сервера конкурентов.";
+  width: 370px;
+  height: 294px;
+  top: 0;
+  left: 0;
+  background: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+
+  transform: translateY(100%);
+  transition: transform 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-set:hover .item::before {
+  transform: translateY(0);
+}
+.item:hover::before {
+  opacity: 1;
 }
 img {
   display: block;
@@ -156,7 +190,7 @@ img {
 .titleClass {
   display: flex;
 }
-.titleClassSection:not(:last-child ){
+.titleClassSection:not(:last-child) {
   margin-right: 30px;
 }
 .titleList,
@@ -167,15 +201,42 @@ img {
   display: flex;
   justify-content: space-between;
 }
+.product-imeges {
+}
+.product-thumb::before {
+  display: inline-block;
+  content: "ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ";
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  position: absolute;
+}
 .navList-link {
   font-weight: 500;
   line-height: 1.142em;
   letter-spacing: 0.02em;
   color: #212121;
+  position: relative;
 }
 .navList-link:focus,
 .navList-link:hover {
   color: #2196f3;
+}
+.navList-link::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navList-link:hover::after {
+  opacity: 1;
 }
 .courant {
   color: #2196f3;
@@ -202,6 +263,7 @@ img {
   border-radius: 4px;
   width: 170px;
   height: 92px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,35 +314,7 @@ img {
 .teamSection {
   background: #f5f4fa;
 }
-.actions {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  justify-content: center;
-  padding-bottom: 30px;
-  background: white;
-}
-.actions-button-icon:not(:last-child) {
-  margin-right: 10px;
-}
-.button-actions {
-  border: none;
-  padding: 0;
-}
-.actions-button-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50% 50%;
-  margin-right: 10px;
-}
-.button-icon {
-  fill: #afb1b8;
-}
-.button-icon:hover {
-  fill: #ffffff;
-  background-color: #2196f3;
-}
+
 /* work_ title*/
 
 .work_title {
@@ -321,6 +355,40 @@ img {
   justify-content: space-between;
   padding-bottom: 94px;
 }
+
+/* actions*/
+.actions {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: #ffffff;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+}
+.actions-button-icon {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50% 50%;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.button-icon {
+  fill: #afb1b8;
+}
+.actions-button-icon:not(:last-child) {
+  margin-right: 10px;
+}
+.button-actions:hover {
+  fill: #ffffff;
+}
+.actions-button-icon:hover {
+  background: #2196f3;
+}
 .cardItem {
   padding-top: 20px;
   padding-bottom: 24px;
@@ -347,9 +415,6 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
-.listMenu:hover {
-  color: #ffffff;
-}
 .listMenu {
   font-weight: 500;
   font-size: 16px;
@@ -369,12 +434,13 @@ img {
   padding-top: 60px;
   padding-bottom: 60px;
   max-width: 1600px;
-  display: flex;
   align-items: center;
   justify-items: center;
 }
 .containerLogo {
   display: inline-block;
+}
+.containerLogo {
   margin-right: 70px;
 }
 .containerJoin {
@@ -394,8 +460,6 @@ img {
   padding: 0;
   margin: 0;
   list-style: none;
-
-  display: flex;
 }
 .button-icon-join {
   border: none;
@@ -404,11 +468,11 @@ img {
   border-radius: 50% 50%;
   background: rgba(255, 255, 255, 0.1);
 }
-.join-block {
-  display: inline-block;
-}
 .join-block:not(:last-child) {
   margin-right: 10px;
+}
+.join-block {
+  display: inline-block;
 }
 .button-icon-join:hover {
   background: #2196f3;
