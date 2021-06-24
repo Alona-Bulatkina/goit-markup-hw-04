@@ -72,7 +72,7 @@ header {
 }
 
 .mainButton {
-  border:transparent;
+  border: transparent;
   cursor: pointer;
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -134,6 +134,10 @@ header {
   margin-top: 30px;
   border: 1px solid #eeeeee;
 }
+.item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 img {
   display: block;
   max-width: 100%;
@@ -156,7 +160,7 @@ img {
 .titleClass {
   display: flex;
 }
-.titleClassSection:not(:last-child ){
+.titleClassSection:not(:last-child) {
   margin-right: 30px;
 }
 .titleList,
@@ -211,11 +215,15 @@ img {
   margin: 0px;
   fill: #afb1b8;
 }
+.button-icon-clients:focus,
 .button-icon-clients:hover {
   fill: #2196f3;
 }
 .box:hover {
   border: 1px solid #2196f3;
+}
+.box:hover .button-icon-clients {
+  fill: #2196f3;
 }
 .contaktsLinks {
   font-weight: 500;
@@ -224,10 +232,18 @@ img {
   line-height: 16px;
 
   color: #757575;
+  display: flex;
+  align-items: center;
 }
 .contaktsLinks:focus,
 .contaktsLinks:hover {
   color: #2196f3;
+}
+.contaktsLinks:focus .icons-contakts {
+  fill: #2196f3;
+}
+.contaktsLinks:hover .icons-contakts {
+  fill: #2196f3;
 }
 .text {
   margin-right: auto;
@@ -258,28 +274,26 @@ img {
   margin: 0;
   list-style: none;
   justify-content: center;
-  padding-bottom: 30px;
   background: white;
 }
 .actions-button-icon:not(:last-child) {
   margin-right: 10px;
 }
 .button-actions {
+  display: flex;
   border: none;
-  padding: 0;
-}
-.actions-button-icon {
-  width: 44px;
-  height: 44px;
+  padding: 12px;
   border-radius: 50% 50%;
-  margin-right: 10px;
 }
 .button-icon {
   fill: #afb1b8;
 }
-.button-icon:hover {
-  fill: #ffffff;
+.button-actions:focus,
+.button-actions:hover {
   background-color: #2196f3;
+}
+.button-actions:hover .button-icon {
+  fill: #ffffff;
 }
 /* work_ title*/
 
@@ -298,7 +312,7 @@ img {
 }
 .divteamCard {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   background: white;
 }
 .team {
@@ -315,6 +329,7 @@ img {
   line-height: 1.187em;
   letter-spacing: 0.03em;
   text-align: center;
+  margin-bottom: 16px;
 }
 .teamlidcard {
   display: flex;
@@ -417,6 +432,10 @@ img {
   fill: white;
 }
 
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
 .logo {
   font-weight: bold;
   font-size: 26px;
